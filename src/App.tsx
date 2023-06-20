@@ -1,15 +1,21 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RegisterScreen from './pages/RegisterScreen/RegisterScreen';
+import HomeScreen from './pages/HomeScreen/HomeScreen';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className='app-container'>
-      <RegisterScreen />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<RegisterScreen />}></Route>
+          <Route path='/home' element={<HomeScreen />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
 
-export default App
+export default App;
